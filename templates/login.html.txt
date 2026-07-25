@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OLT Dashboard Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #0b0f19; color: #fff; display: flex; align-items: center; justify-content: center; height: 100vh; font-family: 'Segoe UI', sans-serif; }
+        .login-card { background: #151c2c; border: 1px solid #232d42; border-radius: 12px; padding: 35px; width: 100%; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h3 class="text-center text-info mb-4 fw-bold">🌐 OLT Admin Login</h3>
+        {% if error %}
+            <div class="alert alert-danger p-2 fs-6 text-center">{{ error }}</div>
+        {% endif %}
+        <form action="/login" method="POST">
+            <div class="mb-3">
+                <label class="form-label text-muted">Username</label>
+                <input type="text" name="username" class="form-control bg-dark text-white border-secondary" required placeholder="admin">
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-muted">Password</label>
+                <input type="password" name="password" class="form-control bg-dark text-white border-secondary" required placeholder="admin123">
+            </div>
+            <button type="submit" class="btn btn-info w-100 fw-bold text-white mt-2">Login to Dashboard</button>
+        </form>
+    </div>
+</body>
+</html>
